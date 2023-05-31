@@ -31,14 +31,12 @@ class _MyAppState extends State<MyApp> {
 
   late AppStateNotifier _appStateNotifier;
   late GoRouter _router;
-  String _initialPage = 'login';
 
   @override
   void initState() {
     super.initState();
     _appStateNotifier = AppStateNotifier();
     _router = createRouter(_appStateNotifier);
-    _router.go(_initialPage);
   }
 
   void setLocale(String language) {
