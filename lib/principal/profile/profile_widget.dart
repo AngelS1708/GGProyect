@@ -8,35 +8,7 @@ import 'profile_model.dart';
 export 'profile_model.dart';
 
 class ProfileWidget extends StatefulWidget {
-  const ProfileWidget({
-    Key? key,
-    String? description,
-    String? username,
-    String? gamesCompleted,
-    String? favGames,
-    String? jugando,
-    String? enEspera,
-    String? juegosSeguidos,
-    String? abandonadosGames,
-  })  : this.description = description ??
-            'Hey! Aqui puedes poner una descripción que hable sobre ti.',
-        this.username = username ?? 'UserName',
-        this.gamesCompleted = gamesCompleted ?? '0',
-        this.favGames = favGames ?? '0',
-        this.jugando = jugando ?? '0',
-        this.enEspera = enEspera ?? '0',
-        this.juegosSeguidos = juegosSeguidos ?? '0',
-        this.abandonadosGames = abandonadosGames ?? '0',
-        super(key: key);
-
-  final String description;
-  final String username;
-  final String gamesCompleted;
-  final String favGames;
-  final String jugando;
-  final String enEspera;
-  final String juegosSeguidos;
-  final String abandonadosGames;
+  const ProfileWidget({Key? key}) : super(key: key);
 
   @override
   _ProfileWidgetState createState() => _ProfileWidgetState();
@@ -133,7 +105,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          widget.juegosSeguidos,
+                          '0',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Poppins',
@@ -190,7 +162,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Text(
-                          widget.favGames,
+                          '0',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Poppins',
@@ -211,7 +183,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                 child: Text(
-                  widget.username,
+                  '[UserName]',
                   style: FlutterFlowTheme.of(context).titleLarge.override(
                         fontFamily: 'Poppins',
                         fontWeight: FontWeight.bold,
@@ -221,7 +193,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(24.0, 12.0, 24.0, 0.0),
                 child: Text(
-                  widget.description,
+                  'Hey! Aqui puedes poner una descripcion que hable sobre ti :)',
                   textAlign: TextAlign.center,
                   style: FlutterFlowTheme.of(context).bodyMedium,
                 ),
@@ -338,7 +310,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                       .fromSTEB(
                                                           0.0, 12.0, 0.0, 4.0),
                                                   child: Text(
-                                                    widget.gamesCompleted,
+                                                    '0',
                                                     textAlign: TextAlign.center,
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -410,7 +382,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                       .fromSTEB(
                                                           0.0, 12.0, 0.0, 4.0),
                                                   child: Text(
-                                                    widget.jugando,
+                                                    '0',
                                                     textAlign: TextAlign.center,
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -482,7 +454,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                       .fromSTEB(
                                                           0.0, 12.0, 0.0, 4.0),
                                                   child: Text(
-                                                    widget.abandonadosGames,
+                                                    '0',
                                                     textAlign: TextAlign.center,
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -554,7 +526,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                       .fromSTEB(
                                                           0.0, 12.0, 0.0, 4.0),
                                                   child: Text(
-                                                    widget.enEspera,
+                                                    '0',
                                                     textAlign: TextAlign.center,
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -578,6 +550,68 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                         ),
                                       ],
                                     ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 20.0, 0.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Flexible(
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        20.0, 0.0, 0.0, 0.0),
+                                    child: Text(
+                                      '¿Hace falta algún videojuego o su información esta mal?',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                    ),
+                                  ),
+                                ),
+                                FFButtonWidget(
+                                  onPressed: () async {
+                                    context.pushNamed(
+                                      'AdminViewer',
+                                      extra: <String, dynamic>{
+                                        kTransitionInfoKey: TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.rightToLeft,
+                                          duration: Duration(milliseconds: 400),
+                                        ),
+                                      },
+                                    );
+                                  },
+                                  text: 'Ir',
+                                  options: FFButtonOptions(
+                                    height: 40.0,
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        24.0, 0.0, 24.0, 0.0),
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    color:
+                                        FlutterFlowTheme.of(context).secondary,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: Colors.white,
+                                        ),
+                                    elevation: 3.0,
+                                    borderSide: BorderSide(
+                                      color: Colors.transparent,
+                                      width: 1.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(20.0),
                                   ),
                                 ),
                               ],

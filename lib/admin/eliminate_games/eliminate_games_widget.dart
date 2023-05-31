@@ -4,18 +4,18 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'elimination_games_model.dart';
-export 'elimination_games_model.dart';
+import 'eliminate_games_model.dart';
+export 'eliminate_games_model.dart';
 
-class EliminationGamesWidget extends StatefulWidget {
-  const EliminationGamesWidget({Key? key}) : super(key: key);
+class EliminateGamesWidget extends StatefulWidget {
+  const EliminateGamesWidget({Key? key}) : super(key: key);
 
   @override
-  _EliminationGamesWidgetState createState() => _EliminationGamesWidgetState();
+  _EliminateGamesWidgetState createState() => _EliminateGamesWidgetState();
 }
 
-class _EliminationGamesWidgetState extends State<EliminationGamesWidget> {
-  late EliminationGamesModel _model;
+class _EliminateGamesWidgetState extends State<EliminateGamesWidget> {
+  late EliminateGamesModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final _unfocusNode = FocusNode();
@@ -23,7 +23,7 @@ class _EliminationGamesWidgetState extends State<EliminationGamesWidget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => EliminationGamesModel());
+    _model = createModel(context, () => EliminateGamesModel());
   }
 
   @override
@@ -97,7 +97,7 @@ class _EliminationGamesWidgetState extends State<EliminationGamesWidget> {
                                     ClipRRect(
                                       borderRadius: BorderRadius.circular(40.0),
                                       child: Image.network(
-                                        'https://picsum.photos/seed/817/600',
+                                        'https://files.cults3d.com/uploaders/16527374/illustration-file/707bf1d6-ae50-45c0-8e2f-98c3b49af524/kirbo_001.jpg',
                                         width: 60.0,
                                         height: 60.0,
                                         fit: BoxFit.cover,
