@@ -233,7 +233,7 @@ class _SearchWidgetState extends State<SearchWidget> {
                                 FFButtonWidget(
                                   onPressed: () async {
                                     context.pushNamed(
-                                      'allGames',
+                                      'contenidoJuego',
                                       extra: <String, dynamic>{
                                         kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,
