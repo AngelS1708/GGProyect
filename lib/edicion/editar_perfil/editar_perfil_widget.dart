@@ -322,28 +322,8 @@ class _EditarPerfilWidgetState extends State<EditarPerfilWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 30.0),
                           child: FFButtonWidget(
-                            onPressed: () async {
-                              context.pushNamed(
-                                'Profile',
-                                queryParams: {
-                                  'description': serializeParam(
-                                    '',
-                                    ParamType.String,
-                                  ),
-                                  'username': serializeParam(
-                                    '',
-                                    ParamType.String,
-                                  ),
-                                }.withoutNulls,
-                                extra: <String, dynamic>{
-                                  kTransitionInfoKey: TransitionInfo(
-                                    hasTransition: true,
-                                    transitionType:
-                                        PageTransitionType.rightToLeft,
-                                    duration: Duration(milliseconds: 300),
-                                  ),
-                                },
-                              );
+                            onPressed: () {
+                              print('Button pressed ...');
                             },
                             text: 'Guardar',
                             options: FFButtonOptions(

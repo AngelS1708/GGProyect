@@ -8,17 +8,7 @@ import 'search_model.dart';
 export 'search_model.dart';
 
 class SearchWidget extends StatefulWidget {
-  const SearchWidget({
-    Key? key,
-    String? nameGame,
-    this.year,
-    this.plataformas,
-  })  : this.nameGame = nameGame ?? '',
-        super(key: key);
-
-  final String nameGame;
-  final String? year;
-  final String? plataformas;
+  const SearchWidget({Key? key}) : super(key: key);
 
   @override
   _SearchWidgetState createState() => _SearchWidgetState();
@@ -170,7 +160,7 @@ class _SearchWidgetState extends State<SearchWidget> {
                                 ClipRRect(
                                   borderRadius: BorderRadius.circular(40.0),
                                   child: Image.network(
-                                    'https://picsum.photos/seed/817/600',
+                                    'https://files.cults3d.com/uploaders/16527374/illustration-file/707bf1d6-ae50-45c0-8e2f-98c3b49af524/kirbo_001.jpg',
                                     width: 60.0,
                                     height: 60.0,
                                     fit: BoxFit.cover,
@@ -186,7 +176,7 @@ class _SearchWidgetState extends State<SearchWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 0.0, 0.0),
                                         child: Text(
-                                          widget.nameGame,
+                                          '[nameGame]',
                                           style: FlutterFlowTheme.of(context)
                                               .titleMedium
                                               .override(
@@ -204,7 +194,7 @@ class _SearchWidgetState extends State<SearchWidget> {
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 0.0, 0.0, 0.0),
                                             child: Text(
-                                              widget.year!,
+                                              '[year]',
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodySmall
@@ -222,7 +212,7 @@ class _SearchWidgetState extends State<SearchWidget> {
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     4.0, 0.0, 0.0, 0.0),
                                             child: Text(
-                                              widget.plataformas!,
+                                              '[Platadorma]',
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodySmall
@@ -241,8 +231,18 @@ class _SearchWidgetState extends State<SearchWidget> {
                                   ),
                                 ),
                                 FFButtonWidget(
-                                  onPressed: () {
-                                    print('Button pressed ...');
+                                  onPressed: () async {
+                                    context.pushNamed(
+                                      'allGames',
+                                      extra: <String, dynamic>{
+                                        kTransitionInfoKey: TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.fade,
+                                          duration: Duration(milliseconds: 400),
+                                        ),
+                                      },
+                                    );
                                   },
                                   text: 'Ver',
                                   options: FFButtonOptions(

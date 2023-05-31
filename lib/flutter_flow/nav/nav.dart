@@ -57,30 +57,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: '/search',
           builder: (context, params) => params.isEmpty
               ? NavBarPage(initialPage: 'Search')
-              : SearchWidget(
-                  nameGame: params.getParam('nameGame', ParamType.String),
-                  year: params.getParam('year', ParamType.String),
-                  plataformas: params.getParam('plataformas', ParamType.String),
-                ),
+              : SearchWidget(),
         ),
         FFRoute(
           name: 'Profile',
           path: '/profile',
           builder: (context, params) => params.isEmpty
               ? NavBarPage(initialPage: 'Profile')
-              : ProfileWidget(
-                  description: params.getParam('description', ParamType.String),
-                  username: params.getParam('username', ParamType.String),
-                  gamesCompleted:
-                      params.getParam('gamesCompleted', ParamType.String),
-                  favGames: params.getParam('favGames', ParamType.String),
-                  jugando: params.getParam('jugando', ParamType.String),
-                  enEspera: params.getParam('enEspera', ParamType.String),
-                  juegosSeguidos:
-                      params.getParam('juegosSeguidos', ParamType.String),
-                  abandonadosGames:
-                      params.getParam('abandonadosGames', ParamType.String),
-                ),
+              : ProfileWidget(),
         ),
         FFRoute(
           name: 'editarPerfil',
@@ -108,9 +92,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => AddGameWidget(),
         ),
         FFRoute(
-          name: 'EliminationGames',
-          path: '/eliminationGames',
-          builder: (context, params) => EliminationGamesWidget(),
+          name: 'EliminateGames',
+          path: '/eliminateGames',
+          builder: (context, params) => EliminateGamesWidget(),
+        ),
+        FFRoute(
+          name: 'AdminViewer',
+          path: '/adminViewer',
+          builder: (context, params) => AdminViewerWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       urlPathStrategy: UrlPathStrategy.path,

@@ -11,5 +11,6 @@ export '/consultas/contenido_juego/contenido_juego_widget.dart'
     show ContenidoJuegoWidget;
 export '/consultas/all_games/all_games_widget.dart' show AllGamesWidget;
 export '/admin/add_game/add_game_widget.dart' show AddGameWidget;
-export '/admin/elimination_games/elimination_games_widget.dart'
-    show EliminationGamesWidget;
+export '/admin/eliminate_games/eliminate_games_widget.dart'
+    show EliminateGamesWidget;
+export '/admin/admin_viewer/admin_viewer_widget.dart' show AdminViewerWidget;
