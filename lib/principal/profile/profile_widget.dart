@@ -565,7 +565,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                 Flexible(
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        20.0, 0.0, 0.0, 0.0),
+                                        20.0, 0.0, 0.0, 20.0),
                                     child: Text(
                                       '¿Hace falta algún videojuego o su información esta mal?',
                                       style: FlutterFlowTheme.of(context)
