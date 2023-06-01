@@ -59,16 +59,14 @@ class _LoginWidgetState extends State<LoginWidget> {
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Flexible(
-                      child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            0.0, 20.0, 0.0, 24.0),
-                        child: Image.asset(
-                          'assets/images/logoGG.png',
-                          width: 300.0,
-                          height: 300.0,
-                          fit: BoxFit.cover,
-                        ),
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 24.0),
+                      child: Image.asset(
+                        'assets/images/logoGG.png',
+                        width: 300.0,
+                        height: 300.0,
+                        fit: BoxFit.fill,
                       ),
                     ),
                     Padding(
