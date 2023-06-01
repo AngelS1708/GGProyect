@@ -5,18 +5,18 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
-import 'registro_model.dart';
-export 'registro_model.dart';
+import 'register_model.dart';
+export 'register_model.dart';
 
-class RegistroWidget extends StatefulWidget {
-  const RegistroWidget({Key? key}) : super(key: key);
+class RegisterWidget extends StatefulWidget {
+  const RegisterWidget({Key? key}) : super(key: key);
 
   @override
-  _RegistroWidgetState createState() => _RegistroWidgetState();
+  _RegisterWidgetState createState() => _RegisterWidgetState();
 }
 
-class _RegistroWidgetState extends State<RegistroWidget> {
-  late RegistroModel _model;
+class _RegisterWidgetState extends State<RegisterWidget> {
+  late RegisterModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final _unfocusNode = FocusNode();
@@ -24,7 +24,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => RegistroModel());
+    _model = createModel(context, () => RegisterModel());
 
     _model.emailAddressController ??= TextEditingController();
     _model.userNameController ??= TextEditingController();
@@ -46,12 +46,11 @@ class _RegistroWidgetState extends State<RegistroWidget> {
       onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        backgroundColor: Colors.black,
         body: SafeArea(
           top: true,
           child: Container(
             width: MediaQuery.of(context).size.width * 1.0,
-            height: MediaQuery.of(context).size.height * 1.0,
             decoration: BoxDecoration(
               color: Colors.black,
             ),
@@ -62,11 +61,15 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Image.asset(
-                      'assets/images/logoControl.png',
-                      width: 160.0,
-                      height: 140.0,
-                      fit: BoxFit.cover,
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
+                      child: Image.asset(
+                        'assets/images/logoControl.png',
+                        width: 160.0,
+                        height: 140.0,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                     Padding(
                       padding:
@@ -460,13 +463,13 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                     ),
                     FFButtonWidget(
                       onPressed: () async {
-                        context.pushNamed(
+                        context.goNamed(
                           'home',
                           extra: <String, dynamic>{
                             kTransitionInfoKey: TransitionInfo(
                               hasTransition: true,
-                              transitionType: PageTransitionType.rightToLeft,
-                              duration: Duration(milliseconds: 300),
+                              transitionType: PageTransitionType.leftToRight,
+                              duration: Duration(milliseconds: 500),
                             ),
                           },
                         );
@@ -540,8 +543,17 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                       ),
                     ),
                     FFButtonWidget(
-                      onPressed: () {
-                        print('BtnTerm pressed ...');
+                      onPressed: () async {
+                        context.pushNamed(
+                          'terminosYCondiciones',
+                          extra: <String, dynamic>{
+                            kTransitionInfoKey: TransitionInfo(
+                              hasTransition: true,
+                              transitionType: PageTransitionType.leftToRight,
+                              duration: Duration(milliseconds: 500),
+                            ),
+                          },
+                        );
                       },
                       text: 'Términos y Condiciones',
                       options: FFButtonOptions(

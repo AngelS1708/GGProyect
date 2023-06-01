@@ -29,22 +29,17 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
-      errorBuilder: (context, _) => RegistroWidget(),
+      errorBuilder: (context, _) => NavBarPage(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => RegistroWidget(),
+          builder: (context, _) => NavBarPage(),
         ),
         FFRoute(
           name: 'Login',
           path: '/login',
           builder: (context, params) => LoginWidget(),
-        ),
-        FFRoute(
-          name: 'Registro',
-          path: '/registro',
-          builder: (context, params) => RegistroWidget(),
         ),
         FFRoute(
           name: 'home',
@@ -125,6 +120,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'terminosYCondiciones',
           path: '/terminosYCondiciones',
           builder: (context, params) => TerminosYCondicionesWidget(),
+        ),
+        FFRoute(
+          name: 'register',
+          path: '/register',
+          builder: (context, params) => RegisterWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       urlPathStrategy: UrlPathStrategy.path,

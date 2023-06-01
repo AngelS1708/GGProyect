@@ -1,6 +1,5 @@
 // Export pages
 export '/sesion/login/login_widget.dart' show LoginWidget;
-export '/sesion/registro/registro_widget.dart' show RegistroWidget;
 export '/principal/home/home_widget.dart' show HomeWidget;
 export '/principal/search/search_widget.dart' show SearchWidget;
 export '/principal/profile/profile_widget.dart' show ProfileWidget;
@@ -24,3 +23,4 @@ export '/consultas/juegos_abandonados/juegos_abandonados_widget.dart'
     show JuegosAbandonadosWidget;
 export '/consultas/terminos_y_condiciones/terminos_y_condiciones_widget.dart'
     show TerminosYCondicionesWidget;
+export '/sesion/register/register_widget.dart' show RegisterWidget;

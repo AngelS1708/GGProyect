@@ -245,7 +245,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                     ),
                     FFButtonWidget(
                       onPressed: () async {
-                        context.pushNamed(
+                        context.goNamed(
                           'home',
                           extra: <String, dynamic>{
                             kTransitionInfoKey: TransitionInfo(
@@ -298,13 +298,13 @@ class _LoginWidgetState extends State<LoginWidget> {
                           FFButtonWidget(
                             onPressed: () async {
                               context.pushNamed(
-                                'Registro',
+                                'register',
                                 extra: <String, dynamic>{
                                   kTransitionInfoKey: TransitionInfo(
                                     hasTransition: true,
                                     transitionType:
                                         PageTransitionType.leftToRight,
-                                    duration: Duration(milliseconds: 300),
+                                    duration: Duration(milliseconds: 500),
                                   ),
                                 },
                               );
