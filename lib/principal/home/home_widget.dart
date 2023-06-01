@@ -9,7 +9,12 @@ import 'home_model.dart';
 export 'home_model.dart';
 
 class HomeWidget extends StatefulWidget {
-  const HomeWidget({Key? key}) : super(key: key);
+  const HomeWidget({
+    Key? key,
+    required this.userId,
+  }) : super(key: key);
+
+  final String? userId;
 
   @override
   _HomeWidgetState createState() => _HomeWidgetState();

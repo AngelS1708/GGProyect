@@ -44,8 +44,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'home',
           path: '/home',
-          builder: (context, params) =>
-              params.isEmpty ? NavBarPage(initialPage: 'home') : HomeWidget(),
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'home')
+              : HomeWidget(
+                  userId: params.getParam('userId', ParamType.String),
+                ),
         ),
         FFRoute(
           name: 'Search',
