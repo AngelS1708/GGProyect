@@ -101,6 +101,13 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                                 labelStyle:
                                     FlutterFlowTheme.of(context).bodyMedium,
                                 hintText: 'Nombre del nuevo juego...',
+                                hintStyle: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                    ),
                                 enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: Color(0x00000000),
@@ -147,7 +154,7 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
+                                        .primaryText,
                                   ),
                               validator: _model.nameGameControllerValidator
                                   .asValidator(context),
@@ -178,6 +185,13 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                                 labelStyle:
                                     FlutterFlowTheme.of(context).bodyMedium,
                                 hintText: 'Ingresa el URL de la imagen...',
+                                hintStyle: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                    ),
                                 enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: Color(0x00000000),
@@ -224,7 +238,7 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
+                                        .primaryText,
                                   ),
                               validator: _model.inpImageControllerValidator
                                   .asValidator(context),
@@ -255,6 +269,13 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                                     FlutterFlowTheme.of(context).bodyMedium,
                                 hintText:
                                     'Ingresa una descripcion para el juego...',
+                                hintStyle: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                    ),
                                 enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: Color(0x00000000),
@@ -301,7 +322,7 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
+                                        .primaryText,
                                   ),
                               validator: _model
                                   .descripcionInpControllerValidator
@@ -332,6 +353,13 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                                 labelStyle:
                                     FlutterFlowTheme.of(context).bodyMedium,
                                 hintText: 'Que generos tiene el juego...',
+                                hintStyle: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                    ),
                                 enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: Color(0x00000000),
@@ -378,7 +406,7 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
+                                        .primaryText,
                                   ),
                               keyboardType: TextInputType.emailAddress,
                               validator: _model.inpGenerosControllerValidator
@@ -409,6 +437,13 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                                 labelStyle:
                                     FlutterFlowTheme.of(context).bodyMedium,
                                 hintText: 'Ingresa la desarrolla del juego...',
+                                hintStyle: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                    ),
                                 enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: Color(0x00000000),
@@ -455,7 +490,7 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
+                                        .primaryText,
                                   ),
                               validator: _model
                                   .inpDesarrolladoraControllerValidator
@@ -486,6 +521,13 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                                 labelStyle:
                                     FlutterFlowTheme.of(context).bodyMedium,
                                 hintText: 'Quien distribuyo el juego...',
+                                hintStyle: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                    ),
                                 enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: Color(0x00000000),
@@ -532,7 +574,7 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
+                                        .primaryText,
                                   ),
                               validator: _model.inpControllerValidator
                                   .asValidator(context),
@@ -563,6 +605,13 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                                 labelStyle:
                                     FlutterFlowTheme.of(context).bodyMedium,
                                 hintText: '##/##/####',
+                                hintStyle: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                    ),
                                 enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: Color(0x00000000),
@@ -609,7 +658,7 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
+                                        .primaryText,
                                   ),
                               keyboardType: TextInputType.datetime,
                               validator: _model.inpFechaControllerValidator
@@ -642,6 +691,13 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                                     FlutterFlowTheme.of(context).bodyMedium,
                                 hintText:
                                     'Plataformas en las que esta disponible...',
+                                hintStyle: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                    ),
                                 enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: Color(0x00000000),
@@ -688,7 +744,7 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
+                                        .primaryText,
                                   ),
                               validator: _model
                                   .inpPlataformasControllerValidator
@@ -720,6 +776,13 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                                     FlutterFlowTheme.of(context).bodyMedium,
                                 hintText:
                                     'Puntuacion que tien een metacritic...',
+                                hintStyle: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                    ),
                                 enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: Color(0x00000000),
@@ -766,7 +829,7 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
+                                        .primaryText,
                                   ),
                               validator: _model.inpMetacriticControllerValidator
                                   .asValidator(context),

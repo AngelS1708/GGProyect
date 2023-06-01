@@ -142,8 +142,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                                 .bodyMedium
                                 .override(
                                   fontFamily: 'Poppins',
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
                                 ),
                             keyboardType: TextInputType.emailAddress,
                             validator: _model
@@ -174,6 +174,13 @@ class _LoginWidgetState extends State<LoginWidget> {
                               labelStyle:
                                   FlutterFlowTheme.of(context).bodyMedium,
                               hintText: 'Contraseña',
+                              hintStyle: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                  ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   color: Color(0x00000000),
@@ -233,8 +240,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                                 .bodyMedium
                                 .override(
                                   fontFamily: 'Poppins',
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
                                 ),
                             validator: _model.passwordControllerValidator
                                 .asValidator(context),

@@ -71,6 +71,13 @@ class _SearchWidgetState extends State<SearchWidget> {
                             labelText: 'Buscar',
                             labelStyle: FlutterFlowTheme.of(context).bodyMedium,
                             hintText: 'Busca un videojuego...',
+                            hintStyle: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                ),
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
                                 color: Color(0x00000000),
@@ -120,8 +127,7 @@ class _SearchWidgetState extends State<SearchWidget> {
                               .bodyMedium
                               .override(
                                 fontFamily: 'Poppins',
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
+                                color: FlutterFlowTheme.of(context).primaryText,
                               ),
                           keyboardType: TextInputType.emailAddress,
                           validator: _model.buscarInputControllerValidator
