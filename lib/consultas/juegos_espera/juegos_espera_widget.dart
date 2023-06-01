@@ -81,7 +81,7 @@ class _JuegosEsperaWidgetState extends State<JuegosEsperaWidget> {
                       scrollDirection: Axis.vertical,
                       children: [
                         Container(
-                          width: MediaQuery.of(context).size.width * 0.07,
+                          width: MediaQuery.of(context).size.width * 1.0,
                           decoration: BoxDecoration(
                             color: Colors.black,
                             boxShadow: [
