@@ -51,6 +51,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
           top: true,
           child: Container(
             width: MediaQuery.of(context).size.width * 1.0,
+            height: MediaQuery.of(context).size.height * 1.0,
             decoration: BoxDecoration(
               color: Colors.black,
             ),
@@ -463,7 +464,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                     ),
                     FFButtonWidget(
                       onPressed: () async {
-                        context.goNamed(
+                        context.pushNamed(
                           'home',
                           extra: <String, dynamic>{
                             kTransitionInfoKey: TransitionInfo(

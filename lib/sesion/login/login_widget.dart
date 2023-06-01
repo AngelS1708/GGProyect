@@ -48,6 +48,7 @@ class _LoginWidgetState extends State<LoginWidget> {
           top: true,
           child: Container(
             width: MediaQuery.of(context).size.width * 1.0,
+            height: MediaQuery.of(context).size.height * 1.0,
             decoration: BoxDecoration(
               color: Colors.black,
             ),
@@ -245,7 +246,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                     ),
                     FFButtonWidget(
                       onPressed: () async {
-                        context.goNamed(
+                        context.pushNamed(
                           'home',
                           extra: <String, dynamic>{
                             kTransitionInfoKey: TransitionInfo(
