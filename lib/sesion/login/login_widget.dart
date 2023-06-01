@@ -48,7 +48,6 @@ class _LoginWidgetState extends State<LoginWidget> {
           top: true,
           child: Container(
             width: MediaQuery.of(context).size.width * 1.0,
-            height: MediaQuery.of(context).size.height * 1.0,
             decoration: BoxDecoration(
               color: Colors.black,
             ),
@@ -286,12 +285,14 @@ class _LoginWidgetState extends State<LoginWidget> {
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 12.0, 0.0),
-                            child: Text(
-                              '¿Todavía no tienes una cuenta?',
-                              style: FlutterFlowTheme.of(context).bodyMedium,
+                          Flexible(
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 12.0, 0.0),
+                              child: Text(
+                                '¿Todavía no tienes una cuenta?',
+                                style: FlutterFlowTheme.of(context).bodyMedium,
+                              ),
                             ),
                           ),
                           FFButtonWidget(
@@ -343,8 +344,18 @@ class _LoginWidgetState extends State<LoginWidget> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           FFButtonWidget(
-                            onPressed: () {
-                              print('Button pressed ...');
+                            onPressed: () async {
+                              context.pushNamed(
+                                'terminosYCondiciones',
+                                extra: <String, dynamic>{
+                                  kTransitionInfoKey: TransitionInfo(
+                                    hasTransition: true,
+                                    transitionType:
+                                        PageTransitionType.leftToRight,
+                                    duration: Duration(milliseconds: 500),
+                                  ),
+                                },
+                              );
                             },
                             text: 'Términos y Condiciones',
                             options: FFButtonOptions(
