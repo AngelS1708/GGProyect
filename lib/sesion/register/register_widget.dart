@@ -471,6 +471,14 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                               '',
                               ParamType.String,
                             ),
+                            'name': serializeParam(
+                              '',
+                              ParamType.String,
+                            ),
+                            'admin': serializeParam(
+                              false,
+                              ParamType.bool,
+                            ),
                           }.withoutNulls,
                           extra: <String, dynamic>{
                             kTransitionInfoKey: TransitionInfo(

@@ -11,10 +11,16 @@ class ProfileWidget extends StatefulWidget {
   const ProfileWidget({
     Key? key,
     String? userId,
+    String? name,
+    bool? admin,
   })  : this.userId = userId ?? '123',
+        this.name = name ?? 'none',
+        this.admin = admin ?? false,
         super(key: key);
 
   final String userId;
+  final String name;
+  final bool admin;
 
   @override
   _ProfileWidgetState createState() => _ProfileWidgetState();
@@ -653,77 +659,79 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                 ],
                               ),
                             ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 20.0, 0.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Flexible(
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          20.0, 0.0, 0.0, 20.0),
-                                      child: Text(
-                                        '¿Hace falta algún videojuego o su información esta mal?',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
+                            if (widget.admin)
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 20.0, 0.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Flexible(
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            20.0, 0.0, 0.0, 20.0),
+                                        child: Text(
+                                          '¿Hace falta algún videojuego o su información esta mal?',
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                fontWeight: FontWeight.w500,
+                                              ),
+                                        ),
+                                      ),
+                                    ),
+                                    FFButtonWidget(
+                                      onPressed: () async {
+                                        context.pushNamed(
+                                          'AdminViewer',
+                                          queryParams: {
+                                            'userId': serializeParam(
+                                              '',
+                                              ParamType.String,
+                                            ),
+                                          }.withoutNulls,
+                                          extra: <String, dynamic>{
+                                            kTransitionInfoKey: TransitionInfo(
+                                              hasTransition: true,
+                                              transitionType: PageTransitionType
+                                                  .rightToLeft,
+                                              duration:
+                                                  Duration(milliseconds: 400),
+                                            ),
+                                          },
+                                        );
+                                      },
+                                      text: 'Ir',
+                                      options: FFButtonOptions(
+                                        height: 40.0,
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            24.0, 0.0, 24.0, 0.0),
+                                        iconPadding:
+                                            EdgeInsetsDirectional.fromSTEB(
+                                                0.0, 0.0, 0.0, 0.0),
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondary,
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
                                             .override(
                                               fontFamily: 'Poppins',
-                                              fontWeight: FontWeight.w500,
+                                              color: Colors.white,
                                             ),
+                                        elevation: 3.0,
+                                        borderSide: BorderSide(
+                                          color: Colors.transparent,
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(20.0),
                                       ),
                                     ),
-                                  ),
-                                  FFButtonWidget(
-                                    onPressed: () async {
-                                      context.pushNamed(
-                                        'AdminViewer',
-                                        queryParams: {
-                                          'userId': serializeParam(
-                                            '',
-                                            ParamType.String,
-                                          ),
-                                        }.withoutNulls,
-                                        extra: <String, dynamic>{
-                                          kTransitionInfoKey: TransitionInfo(
-                                            hasTransition: true,
-                                            transitionType:
-                                                PageTransitionType.rightToLeft,
-                                            duration:
-                                                Duration(milliseconds: 400),
-                                          ),
-                                        },
-                                      );
-                                    },
-                                    text: 'Ir',
-                                    options: FFButtonOptions(
-                                      height: 40.0,
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          24.0, 0.0, 24.0, 0.0),
-                                      iconPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondary,
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            color: Colors.white,
-                                          ),
-                                      elevation: 3.0,
-                                      borderSide: BorderSide(
-                                        color: Colors.transparent,
-                                        width: 1.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(20.0),
-                                    ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
-                            ),
                           ],
                         ),
                       ),

@@ -258,6 +258,14 @@ class _LoginWidgetState extends State<LoginWidget> {
                               '',
                               ParamType.String,
                             ),
+                            'name': serializeParam(
+                              '',
+                              ParamType.String,
+                            ),
+                            'admin': serializeParam(
+                              false,
+                              ParamType.bool,
+                            ),
                           }.withoutNulls,
                           extra: <String, dynamic>{
                             kTransitionInfoKey: TransitionInfo(

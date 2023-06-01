@@ -48,6 +48,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ? NavBarPage(initialPage: 'home')
               : HomeWidget(
                   userId: params.getParam('userId', ParamType.String),
+                  admin: params.getParam('admin', ParamType.bool),
+                  name: params.getParam('name', ParamType.String),
                 ),
         ),
         FFRoute(
@@ -66,6 +68,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ? NavBarPage(initialPage: 'Profile')
               : ProfileWidget(
                   userId: params.getParam('userId', ParamType.String),
+                  name: params.getParam('name', ParamType.String),
+                  admin: params.getParam('admin', ParamType.bool),
                 ),
         ),
         FFRoute(

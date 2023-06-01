@@ -12,10 +12,16 @@ class HomeWidget extends StatefulWidget {
   const HomeWidget({
     Key? key,
     String? userId,
+    bool? admin,
+    String? name,
   })  : this.userId = userId ?? '123',
+        this.admin = admin ?? false,
+        this.name = name ?? 'none',
         super(key: key);
 
   final String userId;
+  final bool admin;
+  final String name;
 
   @override
   _HomeWidgetState createState() => _HomeWidgetState();
