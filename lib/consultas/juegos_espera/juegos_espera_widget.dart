@@ -58,7 +58,11 @@ class _JuegosEsperaWidgetState extends State<JuegosEsperaWidget> {
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
-                Flexible(
+                Container(
+                  width: MediaQuery.of(context).size.width * 1.0,
+                  decoration: BoxDecoration(
+                    color: Colors.black,
+                  ),
                   child: Padding(
                     padding:
                         EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 20.0),
