@@ -317,7 +317,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
                                               context.pushNamed(
-                                                'allGames',
+                                                'juegosCompletados',
                                                 extra: <String, dynamic>{
                                                   kTransitionInfoKey:
                                                       TransitionInfo(
@@ -392,7 +392,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
                                               context.pushNamed(
-                                                'allGames',
+                                                'juegosenCurso',
                                                 extra: <String, dynamic>{
                                                   kTransitionInfoKey:
                                                       TransitionInfo(
@@ -467,7 +467,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
                                               context.pushNamed(
-                                                'allGames',
+                                                'juegosAbandonados',
                                                 extra: <String, dynamic>{
                                                   kTransitionInfoKey:
                                                       TransitionInfo(
@@ -542,7 +542,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
                                               context.pushNamed(
-                                                'allGames',
+                                                'juegosEspera',
                                                 extra: <String, dynamic>{
                                                   kTransitionInfoKey:
                                                       TransitionInfo(
