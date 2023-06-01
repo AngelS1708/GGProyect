@@ -9,7 +9,13 @@ import 'add_game_model.dart';
 export 'add_game_model.dart';
 
 class AddGameWidget extends StatefulWidget {
-  const AddGameWidget({Key? key}) : super(key: key);
+  const AddGameWidget({
+    Key? key,
+    String? userId,
+  })  : this.userId = userId ?? '123',
+        super(key: key);
+
+  final String userId;
 
   @override
   _AddGameWidgetState createState() => _AddGameWidgetState();
@@ -841,8 +847,24 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 40.0),
                         child: FFButtonWidget(
-                          onPressed: () {
-                            print('Button pressed ...');
+                          onPressed: () async {
+                            context.pushNamed(
+                              'AdminViewer',
+                              queryParams: {
+                                'userId': serializeParam(
+                                  '',
+                                  ParamType.String,
+                                ),
+                              }.withoutNulls,
+                              extra: <String, dynamic>{
+                                kTransitionInfoKey: TransitionInfo(
+                                  hasTransition: true,
+                                  transitionType:
+                                      PageTransitionType.rightToLeft,
+                                  duration: Duration(milliseconds: 500),
+                                ),
+                              },
+                            );
                           },
                           text: 'Guardar',
                           options: FFButtonOptions(

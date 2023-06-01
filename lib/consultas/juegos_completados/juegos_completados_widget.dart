@@ -8,7 +8,13 @@ import 'juegos_completados_model.dart';
 export 'juegos_completados_model.dart';
 
 class JuegosCompletadosWidget extends StatefulWidget {
-  const JuegosCompletadosWidget({Key? key}) : super(key: key);
+  const JuegosCompletadosWidget({
+    Key? key,
+    String? userId,
+  })  : this.userId = userId ?? '123',
+        super(key: key);
+
+  final String userId;
 
   @override
   _JuegosCompletadosWidgetState createState() =>
@@ -181,6 +187,16 @@ class _JuegosCompletadosWidgetState extends State<JuegosCompletadosWidget> {
                                   onPressed: () async {
                                     context.pushNamed(
                                       'contenidoJuego',
+                                      queryParams: {
+                                        'userId': serializeParam(
+                                          '',
+                                          ParamType.String,
+                                        ),
+                                        'gameId': serializeParam(
+                                          '',
+                                          ParamType.String,
+                                        ),
+                                      }.withoutNulls,
                                       extra: <String, dynamic>{
                                         kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,

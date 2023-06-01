@@ -8,7 +8,13 @@ import 'edit_image_model.dart';
 export 'edit_image_model.dart';
 
 class EditImageWidget extends StatefulWidget {
-  const EditImageWidget({Key? key}) : super(key: key);
+  const EditImageWidget({
+    Key? key,
+    String? userId,
+  })  : this.userId = userId ?? '123',
+        super(key: key);
+
+  final String userId;
 
   @override
   _EditImageWidgetState createState() => _EditImageWidgetState();
@@ -441,8 +447,23 @@ class _EditImageWidgetState extends State<EditImageWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 20.0, 0.0, 20.0),
                           child: FFButtonWidget(
-                            onPressed: () {
-                              print('Button pressed ...');
+                            onPressed: () async {
+                              context.pushNamed(
+                                'editarPerfil',
+                                queryParams: {
+                                  'userId': serializeParam(
+                                    '',
+                                    ParamType.String,
+                                  ),
+                                }.withoutNulls,
+                                extra: <String, dynamic>{
+                                  kTransitionInfoKey: TransitionInfo(
+                                    hasTransition: true,
+                                    transitionType: PageTransitionType.fade,
+                                    duration: Duration(milliseconds: 500),
+                                  ),
+                                },
+                              );
                             },
                             text: 'Guardar',
                             options: FFButtonOptions(

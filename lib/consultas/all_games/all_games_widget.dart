@@ -8,7 +8,13 @@ import 'all_games_model.dart';
 export 'all_games_model.dart';
 
 class AllGamesWidget extends StatefulWidget {
-  const AllGamesWidget({Key? key}) : super(key: key);
+  const AllGamesWidget({
+    Key? key,
+    String? uerId,
+  })  : this.uerId = uerId ?? '123',
+        super(key: key);
+
+  final String uerId;
 
   @override
   _AllGamesWidgetState createState() => _AllGamesWidgetState();
@@ -166,6 +172,16 @@ class _AllGamesWidgetState extends State<AllGamesWidget> {
                                   onPressed: () async {
                                     context.pushNamed(
                                       'contenidoJuego',
+                                      queryParams: {
+                                        'userId': serializeParam(
+                                          '',
+                                          ParamType.String,
+                                        ),
+                                        'gameId': serializeParam(
+                                          '',
+                                          ParamType.String,
+                                        ),
+                                      }.withoutNulls,
                                       extra: <String, dynamic>{
                                         kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,

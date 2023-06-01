@@ -10,7 +10,16 @@ import 'contenido_juego_model.dart';
 export 'contenido_juego_model.dart';
 
 class ContenidoJuegoWidget extends StatefulWidget {
-  const ContenidoJuegoWidget({Key? key}) : super(key: key);
+  const ContenidoJuegoWidget({
+    Key? key,
+    String? userId,
+    String? gameId,
+  })  : this.userId = userId ?? '123',
+        this.gameId = gameId ?? '1234',
+        super(key: key);
+
+  final String userId;
+  final String gameId;
 
   @override
   _ContenidoJuegoWidgetState createState() => _ContenidoJuegoWidgetState();

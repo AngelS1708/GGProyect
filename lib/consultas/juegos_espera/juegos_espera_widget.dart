@@ -8,7 +8,13 @@ import 'juegos_espera_model.dart';
 export 'juegos_espera_model.dart';
 
 class JuegosEsperaWidget extends StatefulWidget {
-  const JuegosEsperaWidget({Key? key}) : super(key: key);
+  const JuegosEsperaWidget({
+    Key? key,
+    String? userId,
+  })  : this.userId = userId ?? '123',
+        super(key: key);
+
+  final String userId;
 
   @override
   _JuegosEsperaWidgetState createState() => _JuegosEsperaWidgetState();
@@ -180,6 +186,16 @@ class _JuegosEsperaWidgetState extends State<JuegosEsperaWidget> {
                                   onPressed: () async {
                                     context.pushNamed(
                                       'contenidoJuego',
+                                      queryParams: {
+                                        'userId': serializeParam(
+                                          '',
+                                          ParamType.String,
+                                        ),
+                                        'gameId': serializeParam(
+                                          '',
+                                          ParamType.String,
+                                        ),
+                                      }.withoutNulls,
                                       extra: <String, dynamic>{
                                         kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,

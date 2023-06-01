@@ -8,7 +8,13 @@ import 'editar_perfil_model.dart';
 export 'editar_perfil_model.dart';
 
 class EditarPerfilWidget extends StatefulWidget {
-  const EditarPerfilWidget({Key? key}) : super(key: key);
+  const EditarPerfilWidget({
+    Key? key,
+    String? userId,
+  })  : this.userId = userId ?? '123',
+        super(key: key);
+
+  final String userId;
 
   @override
   _EditarPerfilWidgetState createState() => _EditarPerfilWidgetState();
@@ -345,8 +351,24 @@ class _EditarPerfilWidgetState extends State<EditarPerfilWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 30.0),
                           child: FFButtonWidget(
-                            onPressed: () {
-                              print('Button pressed ...');
+                            onPressed: () async {
+                              context.pushNamed(
+                                'Profile',
+                                queryParams: {
+                                  'userId': serializeParam(
+                                    '',
+                                    ParamType.String,
+                                  ),
+                                }.withoutNulls,
+                                extra: <String, dynamic>{
+                                  kTransitionInfoKey: TransitionInfo(
+                                    hasTransition: true,
+                                    transitionType: PageTransitionType.scale,
+                                    alignment: Alignment.bottomCenter,
+                                    duration: Duration(milliseconds: 500),
+                                  ),
+                                },
+                              );
                             },
                             text: 'Guardar',
                             options: FFButtonOptions(

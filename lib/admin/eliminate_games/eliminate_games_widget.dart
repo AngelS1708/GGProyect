@@ -8,7 +8,13 @@ import 'eliminate_games_model.dart';
 export 'eliminate_games_model.dart';
 
 class EliminateGamesWidget extends StatefulWidget {
-  const EliminateGamesWidget({Key? key}) : super(key: key);
+  const EliminateGamesWidget({
+    Key? key,
+    String? userId,
+  })  : this.userId = userId ?? '123',
+        super(key: key);
+
+  final String userId;
 
   @override
   _EliminateGamesWidgetState createState() => _EliminateGamesWidgetState();

@@ -11,10 +11,11 @@ export 'home_model.dart';
 class HomeWidget extends StatefulWidget {
   const HomeWidget({
     Key? key,
-    required this.userId,
-  }) : super(key: key);
+    String? userId,
+  })  : this.userId = userId ?? '123',
+        super(key: key);
 
-  final String? userId;
+  final String userId;
 
   @override
   _HomeWidgetState createState() => _HomeWidgetState();
@@ -136,6 +137,16 @@ class _HomeWidgetState extends State<HomeWidget> {
                           onTap: () async {
                             context.pushNamed(
                               'contenidoJuego',
+                              queryParams: {
+                                'userId': serializeParam(
+                                  '',
+                                  ParamType.String,
+                                ),
+                                'gameId': serializeParam(
+                                  '',
+                                  ParamType.String,
+                                ),
+                              }.withoutNulls,
                               extra: <String, dynamic>{
                                 kTransitionInfoKey: TransitionInfo(
                                   hasTransition: true,
@@ -260,6 +271,16 @@ class _HomeWidgetState extends State<HomeWidget> {
                                             onTap: () async {
                                               context.pushNamed(
                                                 'contenidoJuego',
+                                                queryParams: {
+                                                  'userId': serializeParam(
+                                                    '',
+                                                    ParamType.String,
+                                                  ),
+                                                  'gameId': serializeParam(
+                                                    '',
+                                                    ParamType.String,
+                                                  ),
+                                                }.withoutNulls,
                                                 extra: <String, dynamic>{
                                                   kTransitionInfoKey:
                                                       TransitionInfo(
@@ -267,7 +288,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                     transitionType:
                                                         PageTransitionType.fade,
                                                     duration: Duration(
-                                                        milliseconds: 300),
+                                                        milliseconds: 500),
                                                   ),
                                                 },
                                               );
@@ -385,6 +406,16 @@ class _HomeWidgetState extends State<HomeWidget> {
                                               onTap: () async {
                                                 context.pushNamed(
                                                   'contenidoJuego',
+                                                  queryParams: {
+                                                    'userId': serializeParam(
+                                                      '',
+                                                      ParamType.String,
+                                                    ),
+                                                    'gameId': serializeParam(
+                                                      '',
+                                                      ParamType.String,
+                                                    ),
+                                                  }.withoutNulls,
                                                   extra: <String, dynamic>{
                                                     kTransitionInfoKey:
                                                         TransitionInfo(
@@ -499,6 +530,12 @@ class _HomeWidgetState extends State<HomeWidget> {
                                     onPressed: () async {
                                       context.pushNamed(
                                         'allGames',
+                                        queryParams: {
+                                          'uerId': serializeParam(
+                                            '',
+                                            ParamType.String,
+                                          ),
+                                        }.withoutNulls,
                                         extra: <String, dynamic>{
                                           kTransitionInfoKey: TransitionInfo(
                                             hasTransition: true,

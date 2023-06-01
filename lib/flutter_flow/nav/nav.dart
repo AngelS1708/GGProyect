@@ -55,69 +55,96 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: '/search',
           builder: (context, params) => params.isEmpty
               ? NavBarPage(initialPage: 'Search')
-              : SearchWidget(),
+              : SearchWidget(
+                  userId: params.getParam('userId', ParamType.String),
+                ),
         ),
         FFRoute(
           name: 'Profile',
           path: '/profile',
           builder: (context, params) => params.isEmpty
               ? NavBarPage(initialPage: 'Profile')
-              : ProfileWidget(),
+              : ProfileWidget(
+                  userId: params.getParam('userId', ParamType.String),
+                ),
         ),
         FFRoute(
           name: 'editarPerfil',
           path: '/editarPerfil',
-          builder: (context, params) => EditarPerfilWidget(),
+          builder: (context, params) => EditarPerfilWidget(
+            userId: params.getParam('userId', ParamType.String),
+          ),
         ),
         FFRoute(
           name: 'editImage',
           path: '/editImage',
-          builder: (context, params) => EditImageWidget(),
+          builder: (context, params) => EditImageWidget(
+            userId: params.getParam('userId', ParamType.String),
+          ),
         ),
         FFRoute(
           name: 'contenidoJuego',
           path: '/contenidoJuego',
-          builder: (context, params) => ContenidoJuegoWidget(),
+          builder: (context, params) => ContenidoJuegoWidget(
+            userId: params.getParam('userId', ParamType.String),
+            gameId: params.getParam('gameId', ParamType.String),
+          ),
         ),
         FFRoute(
           name: 'allGames',
           path: '/allGames',
-          builder: (context, params) => AllGamesWidget(),
+          builder: (context, params) => AllGamesWidget(
+            uerId: params.getParam('uerId', ParamType.String),
+          ),
         ),
         FFRoute(
           name: 'AddGame',
           path: '/addGame',
-          builder: (context, params) => AddGameWidget(),
+          builder: (context, params) => AddGameWidget(
+            userId: params.getParam('userId', ParamType.String),
+          ),
         ),
         FFRoute(
           name: 'EliminateGames',
           path: '/eliminateGames',
-          builder: (context, params) => EliminateGamesWidget(),
+          builder: (context, params) => EliminateGamesWidget(
+            userId: params.getParam('userId', ParamType.String),
+          ),
         ),
         FFRoute(
           name: 'AdminViewer',
           path: '/adminViewer',
-          builder: (context, params) => AdminViewerWidget(),
+          builder: (context, params) => AdminViewerWidget(
+            userId: params.getParam('userId', ParamType.String),
+          ),
         ),
         FFRoute(
           name: 'juegosCompletados',
           path: '/juegosCompletados',
-          builder: (context, params) => JuegosCompletadosWidget(),
+          builder: (context, params) => JuegosCompletadosWidget(
+            userId: params.getParam('userId', ParamType.String),
+          ),
         ),
         FFRoute(
           name: 'juegosEspera',
           path: '/juegosEspera',
-          builder: (context, params) => JuegosEsperaWidget(),
+          builder: (context, params) => JuegosEsperaWidget(
+            userId: params.getParam('userId', ParamType.String),
+          ),
         ),
         FFRoute(
           name: 'juegosenCurso',
           path: '/juegosenCurso',
-          builder: (context, params) => JuegosenCursoWidget(),
+          builder: (context, params) => JuegosenCursoWidget(
+            userId: params.getParam('userId', ParamType.String),
+          ),
         ),
         FFRoute(
           name: 'juegosAbandonados',
           path: '/juegosAbandonados',
-          builder: (context, params) => JuegosAbandonadosWidget(),
+          builder: (context, params) => JuegosAbandonadosWidget(
+            userId: params.getParam('userId', ParamType.String),
+          ),
         ),
         FFRoute(
           name: 'terminosYCondiciones',

@@ -8,7 +8,13 @@ import 'profile_model.dart';
 export 'profile_model.dart';
 
 class ProfileWidget extends StatefulWidget {
-  const ProfileWidget({Key? key}) : super(key: key);
+  const ProfileWidget({
+    Key? key,
+    String? userId,
+  })  : this.userId = userId ?? '123',
+        super(key: key);
+
+  final String userId;
 
   @override
   _ProfileWidgetState createState() => _ProfileWidgetState();
@@ -59,6 +65,12 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                 onPressed: () async {
                   context.pushNamed(
                     'editarPerfil',
+                    queryParams: {
+                      'userId': serializeParam(
+                        '',
+                        ParamType.String,
+                      ),
+                    }.withoutNulls,
                     extra: <String, dynamic>{
                       kTransitionInfoKey: TransitionInfo(
                         hasTransition: true,
@@ -318,6 +330,12 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                             onTap: () async {
                                               context.pushNamed(
                                                 'juegosCompletados',
+                                                queryParams: {
+                                                  'userId': serializeParam(
+                                                    '',
+                                                    ParamType.String,
+                                                  ),
+                                                }.withoutNulls,
                                                 extra: <String, dynamic>{
                                                   kTransitionInfoKey:
                                                       TransitionInfo(
@@ -393,6 +411,12 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                             onTap: () async {
                                               context.pushNamed(
                                                 'juegosenCurso',
+                                                queryParams: {
+                                                  'userId': serializeParam(
+                                                    '',
+                                                    ParamType.String,
+                                                  ),
+                                                }.withoutNulls,
                                                 extra: <String, dynamic>{
                                                   kTransitionInfoKey:
                                                       TransitionInfo(
@@ -468,6 +492,12 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                             onTap: () async {
                                               context.pushNamed(
                                                 'juegosAbandonados',
+                                                queryParams: {
+                                                  'userId': serializeParam(
+                                                    '',
+                                                    ParamType.String,
+                                                  ),
+                                                }.withoutNulls,
                                                 extra: <String, dynamic>{
                                                   kTransitionInfoKey:
                                                       TransitionInfo(
@@ -543,6 +573,12 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                             onTap: () async {
                                               context.pushNamed(
                                                 'juegosEspera',
+                                                queryParams: {
+                                                  'userId': serializeParam(
+                                                    '',
+                                                    ParamType.String,
+                                                  ),
+                                                }.withoutNulls,
                                                 extra: <String, dynamic>{
                                                   kTransitionInfoKey:
                                                       TransitionInfo(
@@ -644,6 +680,12 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                     onPressed: () async {
                                       context.pushNamed(
                                         'AdminViewer',
+                                        queryParams: {
+                                          'userId': serializeParam(
+                                            '',
+                                            ParamType.String,
+                                          ),
+                                        }.withoutNulls,
                                         extra: <String, dynamic>{
                                           kTransitionInfoKey: TransitionInfo(
                                             hasTransition: true,

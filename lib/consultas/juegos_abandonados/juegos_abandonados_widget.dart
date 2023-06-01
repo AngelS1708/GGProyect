@@ -8,7 +8,13 @@ import 'juegos_abandonados_model.dart';
 export 'juegos_abandonados_model.dart';
 
 class JuegosAbandonadosWidget extends StatefulWidget {
-  const JuegosAbandonadosWidget({Key? key}) : super(key: key);
+  const JuegosAbandonadosWidget({
+    Key? key,
+    String? userId,
+  })  : this.userId = userId ?? '123',
+        super(key: key);
+
+  final String userId;
 
   @override
   _JuegosAbandonadosWidgetState createState() =>
@@ -181,6 +187,16 @@ class _JuegosAbandonadosWidgetState extends State<JuegosAbandonadosWidget> {
                                   onPressed: () async {
                                     context.pushNamed(
                                       'contenidoJuego',
+                                      queryParams: {
+                                        'userId': serializeParam(
+                                          '',
+                                          ParamType.String,
+                                        ),
+                                        'gameId': serializeParam(
+                                          '',
+                                          ParamType.String,
+                                        ),
+                                      }.withoutNulls,
                                       extra: <String, dynamic>{
                                         kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,

@@ -253,6 +253,12 @@ class _LoginWidgetState extends State<LoginWidget> {
                       onPressed: () async {
                         context.pushNamed(
                           'home',
+                          queryParams: {
+                            'userId': serializeParam(
+                              '',
+                              ParamType.String,
+                            ),
+                          }.withoutNulls,
                           extra: <String, dynamic>{
                             kTransitionInfoKey: TransitionInfo(
                               hasTransition: true,

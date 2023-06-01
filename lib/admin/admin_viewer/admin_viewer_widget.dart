@@ -8,7 +8,13 @@ import 'admin_viewer_model.dart';
 export 'admin_viewer_model.dart';
 
 class AdminViewerWidget extends StatefulWidget {
-  const AdminViewerWidget({Key? key}) : super(key: key);
+  const AdminViewerWidget({
+    Key? key,
+    String? userId,
+  })  : this.userId = userId ?? '123',
+        super(key: key);
+
+  final String userId;
 
   @override
   _AdminViewerWidgetState createState() => _AdminViewerWidgetState();
@@ -128,6 +134,12 @@ class _AdminViewerWidgetState extends State<AdminViewerWidget> {
                             onPressed: () async {
                               context.pushNamed(
                                 'AddGame',
+                                queryParams: {
+                                  'userId': serializeParam(
+                                    '',
+                                    ParamType.String,
+                                  ),
+                                }.withoutNulls,
                                 extra: <String, dynamic>{
                                   kTransitionInfoKey: TransitionInfo(
                                     hasTransition: true,
@@ -188,6 +200,12 @@ class _AdminViewerWidgetState extends State<AdminViewerWidget> {
                             onPressed: () async {
                               context.pushNamed(
                                 'EliminateGames',
+                                queryParams: {
+                                  'userId': serializeParam(
+                                    '',
+                                    ParamType.String,
+                                  ),
+                                }.withoutNulls,
                                 extra: <String, dynamic>{
                                   kTransitionInfoKey: TransitionInfo(
                                     hasTransition: true,

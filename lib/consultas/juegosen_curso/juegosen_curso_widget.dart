@@ -8,7 +8,13 @@ import 'juegosen_curso_model.dart';
 export 'juegosen_curso_model.dart';
 
 class JuegosenCursoWidget extends StatefulWidget {
-  const JuegosenCursoWidget({Key? key}) : super(key: key);
+  const JuegosenCursoWidget({
+    Key? key,
+    String? userId,
+  })  : this.userId = userId ?? '123',
+        super(key: key);
+
+  final String userId;
 
   @override
   _JuegosenCursoWidgetState createState() => _JuegosenCursoWidgetState();
@@ -180,6 +186,16 @@ class _JuegosenCursoWidgetState extends State<JuegosenCursoWidget> {
                                   onPressed: () async {
                                     context.pushNamed(
                                       'contenidoJuego',
+                                      queryParams: {
+                                        'userId': serializeParam(
+                                          '',
+                                          ParamType.String,
+                                        ),
+                                        'gameId': serializeParam(
+                                          '',
+                                          ParamType.String,
+                                        ),
+                                      }.withoutNulls,
                                       extra: <String, dynamic>{
                                         kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,

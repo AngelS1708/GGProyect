@@ -8,7 +8,13 @@ import 'search_model.dart';
 export 'search_model.dart';
 
 class SearchWidget extends StatefulWidget {
-  const SearchWidget({Key? key}) : super(key: key);
+  const SearchWidget({
+    Key? key,
+    String? userId,
+  })  : this.userId = userId ?? '123',
+        super(key: key);
+
+  final String userId;
 
   @override
   _SearchWidgetState createState() => _SearchWidgetState();
@@ -244,6 +250,16 @@ class _SearchWidgetState extends State<SearchWidget> {
                                     onPressed: () async {
                                       context.pushNamed(
                                         'contenidoJuego',
+                                        queryParams: {
+                                          'userId': serializeParam(
+                                            '',
+                                            ParamType.String,
+                                          ),
+                                          'gameId': serializeParam(
+                                            '',
+                                            ParamType.String,
+                                          ),
+                                        }.withoutNulls,
                                         extra: <String, dynamic>{
                                           kTransitionInfoKey: TransitionInfo(
                                             hasTransition: true,
