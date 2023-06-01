@@ -14,3 +14,13 @@ export '/admin/add_game/add_game_widget.dart' show AddGameWidget;
 export '/admin/eliminate_games/eliminate_games_widget.dart'
     show EliminateGamesWidget;
 export '/admin/admin_viewer/admin_viewer_widget.dart' show AdminViewerWidget;
+export '/consultas/juegos_completados/juegos_completados_widget.dart'
+    show JuegosCompletadosWidget;
+export '/consultas/juegos_espera/juegos_espera_widget.dart'
+    show JuegosEsperaWidget;
+export '/consultas/juegosen_curso/juegosen_curso_widget.dart'
+    show JuegosenCursoWidget;
+export '/consultas/juegos_abandonados/juegos_abandonados_widget.dart'
+    show JuegosAbandonadosWidget;
+export '/consultas/terminos_y_condiciones/terminos_y_condiciones_widget.dart'
+    show TerminosYCondicionesWidget;

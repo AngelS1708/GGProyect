@@ -100,6 +100,31 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'AdminViewer',
           path: '/adminViewer',
           builder: (context, params) => AdminViewerWidget(),
+        ),
+        FFRoute(
+          name: 'juegosCompletados',
+          path: '/juegosCompletados',
+          builder: (context, params) => JuegosCompletadosWidget(),
+        ),
+        FFRoute(
+          name: 'juegosEspera',
+          path: '/juegosEspera',
+          builder: (context, params) => JuegosEsperaWidget(),
+        ),
+        FFRoute(
+          name: 'juegosenCurso',
+          path: '/juegosenCurso',
+          builder: (context, params) => JuegosenCursoWidget(),
+        ),
+        FFRoute(
+          name: 'juegosAbandonados',
+          path: '/juegosAbandonados',
+          builder: (context, params) => JuegosAbandonadosWidget(),
+        ),
+        FFRoute(
+          name: 'terminosYCondiciones',
+          path: '/terminosYCondiciones',
+          builder: (context, params) => TerminosYCondicionesWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       urlPathStrategy: UrlPathStrategy.path,

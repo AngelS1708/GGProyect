@@ -112,7 +112,7 @@ class _ContenidoJuegoWidgetState extends State<ContenidoJuegoWidget> {
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(8.0),
                                   child: Image.network(
-                                    'https://picsum.photos/seed/528/600',
+                                    'https://files.cults3d.com/uploaders/16527374/illustration-file/707bf1d6-ae50-45c0-8e2f-98c3b49af524/kirbo_001.jpg',
                                     width: 125.0,
                                     fit: BoxFit.fitHeight,
                                   ),
